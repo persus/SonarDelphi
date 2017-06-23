@@ -2,7 +2,14 @@ unit GrammarTestNew;
 
 interface
 
-uses Types, SysUtils, System.Classes, System.Generics.Collections , System.Rtti;
+uses Types, SysUtils, System.Classes, System.Generics.Collections , System.Rtti ,
+  SomeProperNamedSourcefile,
+  Some.Namespaced.Sourcefile,
+  SomeSourcefile_with_Undersocres,
+  Some.Namespaced.SourceFile.WithTheKeyWord.Helper,
+  Some.Namespaced.SourceFile.WithTheKeyWord.Helper.InTheMiddle,
+  Helper.Some.Namespaced.SourceFile.WithTheKeyWord.Helper.AtTheBeginning,
+  AndNowTheKeywordHelperNotDotted;
 
 Type
   TMyChar = Char;

@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 org\\sonar\\plugins\\delphi\\antlr\\Delphi.g 2017-06-23 15:47:59
+// $ANTLR 3.5.2 org\\sonar\\plugins\\delphi\\antlr\\Delphi.g 2017-06-23 15:56:45
 
 /*
  * Sonar Delphi Plugin
