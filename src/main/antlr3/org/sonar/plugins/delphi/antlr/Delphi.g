@@ -291,8 +291,8 @@ classItem                    : visibility
                              | classMethod
                              | classField
                              | classProperty
-                             | constSection
-                             | typeSection
+                             | ('public'|'private'|'protected')? constSection
+                             | ('public'|'private'|'protected')? typeSection
                              | ('class')? varSection
                              ;
 classHelperDecl              : 'class' 'helper' (classParent)? 'for' typeId (classHelperItem)* 'end' -> ^('class' typeId ) (classHelperItem)* //CHANGED, we only need "for" class name

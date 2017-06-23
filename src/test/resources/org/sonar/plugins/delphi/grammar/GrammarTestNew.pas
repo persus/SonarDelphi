@@ -20,6 +20,27 @@ Type
   TClassA = class;
   IInterfaceA = interface;
 
+  TCurrentVehicleProxy = class (TInterfacedObject, ICurrentVehicleProxy)
+  strict private
+    class var _instance: ICurrentVehicleProxy;
+
+    function isCurrentTVehicleAssigned(): Boolean;
+  private const
+    ELEMENT_NAME_1 = DID_TechnicalOption_List_1;
+    ELEMENT_NAME_2 = DID_TechnicalOption_List_2;
+  public
+    class function Create: ICurrentVehicleProxy;
+    destructor Destroy; override;
+
+    function GetMasterdata: IMasterDataReader;
+    function GetAGBData: IXMLAGB;
+    function GetXPS: IXPS;
+    function GetXPSConfigWriter: IXPSConfigurationWriter;
+    function GetCodelistDisposer: ICodelistDisposer;
+    function GetGUID: string;
+    function IsReadOnly: Boolean;
+  end;
+
   AnnotationAttribute = class(TCustomAttribute)
   end;
 
