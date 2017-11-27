@@ -285,7 +285,7 @@ classTypeDecl                : 'class' (classState)? (classParent)? (classItem)*
 classState                   : 'sealed'
                              | 'abstract'
                              ;
-classParent                  : '(' genericTypeIdent (',' genericTypeIdent)* ')' -> genericTypeIdent (genericTypeIdent)*   //CHANGEd from typeId to classParentId
+classParent                  : '(' genericTypeIdent (',' genericTypeIdent)* ')' -> genericTypeIdent (genericTypeIdent)*
                              ;
 classItem                    : visibility
                              | classMethod

@@ -27,7 +27,7 @@ Type
   TClassA = class;
   IInterfaceA = interface;
 
-  TCurrentVehicleProxy = class (TInterfacedObject, ICurrentVehicleProxy)
+  TCurrentVehicleProxy = class (TInterfacedObject, ICurrentVehicleProxy, ICurrent_VehicleProxy)
   strict private
     class var _instance: ICurrentVehicleProxy;
 

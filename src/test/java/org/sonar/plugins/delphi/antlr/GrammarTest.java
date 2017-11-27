@@ -123,6 +123,16 @@ public class GrammarTest {
   }
 
   @Test
+  public void parseProjectFileWithKeyWordsAsNames() throws Exception {
+    parseFile("ProjectFileWithKeyWordsAsNames.dpr");
+  }
+
+  @Test
+  public void parseAdvancedGrammarTests() throws Exception {
+    parseFile("AdvancedGrammarTests.pas");
+  }
+
+  @Test
   @Ignore("https://github.com/fabriciocolombo/sonar-delphi/issues/38")
   public void parsePackageAsIdentifier() throws Exception {
     parseFile("PackageAsIdentifier.pas");
@@ -132,6 +142,12 @@ public class GrammarTest {
   @Ignore("https://github.com/fabriciocolombo/sonar-delphi/issues/39")
   public void parseInterfaceMethodResolutionClause() throws Exception {
     parseFile("InterfaceMethodResolutionClause.pas");
+  }
+
+  @Test
+  @Ignore
+  public void parseConstTDVMTreeImageIndex() throws Exception {
+    parseFile("ConstTDVMTreeImageIndex.pas");
   }
 
 }

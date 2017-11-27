@@ -69,7 +69,7 @@ public class DelphiSensor implements Sensor {
   private final DelphiProjectHelper delphiProjectHelper;
   private final BasicMetrics basicMetrics;
   private final ComplexityMetrics complexityMetrics;
-  private final DeadCodeMetrics deadCodeMetrics;
+//  private final DeadCodeMetrics deadCodeMetrics;
 
   public DelphiSensor(DelphiProjectHelper delphiProjectHelper, ActiveRules activeRules,
     ResourcePerspectives perspectives) {
@@ -77,7 +77,7 @@ public class DelphiSensor implements Sensor {
 
     basicMetrics = new BasicMetrics();
     complexityMetrics = new ComplexityMetrics(activeRules, perspectives);
-    deadCodeMetrics = new DeadCodeMetrics(activeRules, perspectives);
+//    deadCodeMetrics = new DeadCodeMetrics(activeRules, perspectives);
   }
 
   /**
@@ -123,7 +123,7 @@ public class DelphiSensor implements Sensor {
 
       processMetric(basicMetrics, sensorContext, resource);
       processMetric(complexityMetrics, sensorContext, resource);
-      processMetric(deadCodeMetrics, sensorContext, resource);
+//      processMetric(deadCodeMetrics, sensorContext, resource);
 
       if (basicMetrics.hasMetric("PUBLIC_DOC_API") && complexityMetrics.hasMetric("PUBLIC_API")) {
         double undocumentedApi = DelphiUtils.checkRange(complexityMetrics.getMetric("PUBLIC_API") - basicMetrics.getMetric("PUBLIC_DOC_API"), 0.0, Double.MAX_VALUE);

@@ -26,6 +26,7 @@ import net.sourceforge.pmd.RuleContext;
 import org.antlr.runtime.tree.Tree;
 import org.sonar.plugins.delphi.antlr.DelphiLexer;
 import org.sonar.plugins.delphi.antlr.ast.DelphiPMDNode;
+import org.sonar.plugins.delphi.utils.DelphiUtils;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -108,14 +109,21 @@ public class AssignedAndFreeRule extends DelphiRule {
   }
 
   private void parseAssigned(DelphiPMDNode node) {
+	int index = 0;
     StringBuilder variableName = new StringBuilder();
-    int index = node.getChildIndex() + 1;
-    Tree forwardNode;
-    while (!(forwardNode = node.getParent().getChild(++index)).getText().equals(")")) {
-      variableName.append(forwardNode.getText());
-    }
+    try {
+	    index = node.getChildIndex() + 1;
+	    Tree forwardNode;
 
-    variables.add(variableName.toString());
+	    while (!(forwardNode = node.getParent().getChild(++index)).getText().equals(")")) {
+	      variableName.append(forwardNode.getText());
+	    }
+
+	    variables.add(variableName.toString());
+    } catch (Exception e) {   	
+        DelphiUtils.LOG.error(String.valueOf(index) + " AssignedAndFreeRule.parseAssigned: " + e.toString());
+        DelphiUtils.LOG.error(variableName.toString());
+    }
   }
 
   @Override
